@@ -3,7 +3,7 @@
  * Copyright (C) 2012-2015 Oleg Dolya
  *
  * Shattered Pixel Dungeon
- * Copyright (C) 2014-2025 Evan Debenham
+ * Copyright (C) 2014-2026 Evan Debenham
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -108,6 +108,7 @@ public enum Icons {
 	SLEEP,
 	ALERT,
 	LOST,
+	INVESTIGATE,
 	DEPTH,      //depth icons have three variants, for regular, seeded, daily, and daily replay runs
 	DEPTH_CHASM,
 	DEPTH_WATER,
@@ -130,7 +131,7 @@ public enum Icons {
 	ALEKS,
 	WATA,
 	CELESTI,
-	KRISTJAN,
+	LUMINE,
 	CUBE_CODE,
 	PURIGRO,
 	ARCNOR;
@@ -341,13 +342,16 @@ public enum Icons {
 				icon.frame( icon.texture.uvRectBySize( 0, 88, 7, 5 ) );
 				break;
 			case SLEEP:
-				icon.frame( icon.texture.uvRectBySize( 16, 80, 9, 8 ) );
+				icon.frame( icon.texture.uvRectBySize( 7, 88, 9, 8 ) );
 				break;
 			case ALERT:
-				icon.frame( icon.texture.uvRectBySize( 16, 88, 8, 8 ) );
+				icon.frame( icon.texture.uvRectBySize( 16, 80, 8, 8 ) );
 				break;
 			case LOST:
-				icon.frame( icon.texture.uvRectBySize( 24, 88, 8, 8 ) );
+				icon.frame( icon.texture.uvRectBySize( 24, 80, 8, 8 ) );
+				break;
+			case INVESTIGATE:
+				icon.frame( icon.texture.uvRectBySize( 16, 88, 8, 8 ) );
 				break;
 			case DEPTH:
 				icon.frame( icon.texture.uvRectBySize( 32 + runTypeOfsX(), 80 + runTypeOfsY(), 6, 7 ) );
@@ -413,7 +417,7 @@ public enum Icons {
 				icon.frame( icon.texture.uvRectBySize( 32, 96, 32, 32 ) );
 				icon.scale.set(PixelScene.align(0.49f));
 				break;
-			case KRISTJAN:
+			case LUMINE:
 				icon.frame( icon.texture.uvRectBySize( 64, 96, 32, 32 ) );
 				icon.scale.set(PixelScene.align(0.49f));
 				break;

@@ -3,7 +3,7 @@
  * Copyright (C) 2012-2015 Oleg Dolya
  *
  * Shattered Pixel Dungeon
- * Copyright (C) 2014-2025 Evan Debenham
+ * Copyright (C) 2014-2026 Evan Debenham
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1363,7 +1363,7 @@ public class GameScene extends PixelScene {
 				if (lastOffset != null) {
 					offsetToInherit = lastOffset;
 				}
-				if (offsetToInherit != null) {
+				if (offsetToInherit != null && !offsetToInherit.isZero()) {
 					wnd.offset(offsetToInherit);
 					wnd.boundOffsetWithMargin(3);
 				}
@@ -1592,8 +1592,10 @@ public class GameScene extends PixelScene {
 
 	@Override
 	public synchronized void saveWindows() {
+		if (members == null) return;
+
 		super.saveWindows();
-		if (scene.inventory != null && scene.inventory.getSelector() != null){
+		if (scene != null && scene.inventory != null && scene.inventory.getSelector() != null){
 			savedSelector = scene.inventory.getSelector();
 		} else {
 			for (Gizmo g : members.toArray(new Gizmo[0])){
@@ -1613,7 +1615,7 @@ public class GameScene extends PixelScene {
 	public synchronized void restoreWindows() {
 		super.restoreWindows();
 		if (savedSelector != null){
-			if (scene.inventory != null){
+			if (scene != null && scene.inventory != null){
 				scene.inventory.setSelector(savedSelector);
 			} else {
 				addToFront(new WndBag(Dungeon.hero.belongings.backpack, savedSelector));
