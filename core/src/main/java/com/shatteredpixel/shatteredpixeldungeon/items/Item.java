@@ -63,9 +63,9 @@ public class Item implements Bundlable {
 	protected static final String TXT_TO_STRING_LVL		= "%s %+d";
 	protected static final String TXT_TO_STRING_X		= "%s x%d";
 	
-	protected static final float TIME_TO_THROW		= 1.0f;
-	protected static final float TIME_TO_PICK_UP	= 1.0f;
-	protected static final float TIME_TO_DROP		= 1.0f;
+	protected static final float TIME_TO_THROW		= 0f; //1.0f;
+	protected static final float TIME_TO_PICK_UP	= 0f; //1.0f;
+	protected static final float TIME_TO_DROP		= 0f; //1.0f;
 	
 	public static final String AC_DROP		= "DROP";
 	public static final String AC_THROW		= "THROW";
